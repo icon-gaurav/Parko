@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Company form</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	th:href="@{/webjars/bootstrap/4.1.3/css/bootstrap.min.css}" />
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+	th:src="@{/webjars/jquery/3.0.0/jquery.min.js}"></script>
+<script type="text/javascript"
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+	th:src="@{/webjars/bootstrap/4.1.3/js/bootstrap.min.js}"></script>
+</head>
+<body>
+	<div class="container">
+		<h2 class="section-title">
+			<strong>Company Details</strong>
+		</h2>
+		<form class="form-horizontal" th:object="@{newCompany}"
+			th:action="@{'/company/'+${newCompany.id}" method="post">
+			<!-- Company ID -->
+			<div class="form-group">
+				<label class="control-label" for="id">Company ID : </label>
+			</div>
+			<div class="form-group">
+				<input type="text" id="id" th:field="*{id}" placeholder="Company ID">
+			</div>
+			<!-- Company Name -->
+			<div class="form-group">
+				<label class="control-label" for="name">Company Name : </label>
+			</div>
+			<div class="form-group">
+				<input type="text" id="name" th:field="*{name}"
+					placeholder="Company Name">
+			</div>
+			<!-- Category Selection -->
+			<div class="form-group">
+				<label class="control-label" for="category">Category : </label>
+			</div>
+			<div class="form-group">
+				<label><input type="checkbox" id="category"
+					th:field="*{category}" placeholder="Category" value="BIKE" />BIKE
+				</label><label><input type="checkbox" id="category"
+					th:field="*{category}" placeholder="Category" value="BICYCLE" />BICYCLE
+				</label><label><input type="checkbox" id="category"
+					th:field="*{category}" placeholder="Category" value="BUS" />BUS </label><label><input
+					type="checkbox" id="category" th:field="*{category}"
+					placeholder="Category" value="CARS" />CARS </label><label><input
+					type="checkbox" id="category" th:field="*{category}"
+					placeholder="Category" value="TRUCK" />TRUCK </label>
+			</div>
+			<!-- Rates for parking -->
+			<div class="form-group">
+				<label class="control-label" for="rate">Rates : </label>
+			</div>
+			<div class="form-group">
+				<input type="number" id="rate" th:field="*{rate}" placeholder="Rs.">
+			</div>
+			<!-- Company Status -->
+			<div class="form-group">
+				<label class="control-label" for="Status">Status : </label>
+			</div>
+			<div class="form-group">
+				<input type="text" id="status" th:field="*{status}"
+					placeholder="Status">
+			</div>
+			<!-- Address -->
+			<div class="form-group">
+				<label class="control-label" for="address">Address : </label>
+			</div>
+			<div class="form-group">
+				<input type="text" id="name" th:field="*{name}"
+					placeholder="Company Name">
+			</div>
+			<!-- Description -->
+			<div class="form-group">
+				<label class="control-label" for="description">Description :
+				</label>
+			</div>
+			<div class="form-group">
+				<textarea id="description" th:field="*{description}"
+					placeholder="Describe about company" rows="5" cols="120"></textarea>
+			</div>
+			<div class="form-group">
+				<button type="reset" class="btn btn-default">Reset</button>
+				<button type="submit" class="btn btn-default">Submit</button>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

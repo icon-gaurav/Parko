@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Parking Application</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}" />
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+	th:src="@{/webjars/jquery/1.11.1/jquery.min.js}"></script>
+<script type="text/javascript"
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+	th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+<script type="text/javascript"
+	th:src="@{/webjars/popper.js/1.14.3/umd/popper.min.js}"></script>
+<script type="text/javascript"
+	th:src="@{/webjars/popper.js/1.14.3/esm/popper.min.js}"></script>
+<script type="text/javascript" th:src="@{/javascript/searchbox.js}"></script>
+<script type="text/javascript" th:src="@{/javascript/parking.js}"></script>
+<link rel="stylesheet" th:href="@{/css/parking.css}" />
+</head>
+<body>
+	<div class="container">
+		<div th:replace="home :: navigation-fragment"></div>
+		<div class="list" style="padding-top: 8em;">
+			<table class="table table-striped table-bordered table-hover">
+				<thead>
+					<tr>
+						<th>SNo</th>
+						<th>Name</th>
+						<th>Address</th>
+						<th>Status</th>
+						<th>Rate</th>
+						<th>Distance from your Location</th>
+						<th>Direction</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="company,iter : ${companyList}">
+						<td th:text="${iter.index}">1</td>
+						<td th:text="${company.name}">DSA corp limited</td>
+						<td th:text="${company.address}">12km</td>
+						<td th:text="${company.status}">120</td>
+						<td th:text="${company.rate}">10pm</td>
+						<td th:text="${company.distance}">12km</td>
+						<td><a href="#">Direction</a>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>DSA corp limited</td>
+						<td>12km</td>
+						<td>120</td>
+						<td>10pm</td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>DSA corp limited</td>
+						<td>12km</td>
+						<td>120</td>
+						<td>10pm</td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>DSA corp limited</td>
+						<td>12km</td>
+						<td>120</td>
+						<td>10pm</td>
+					</tr>
+				</tbody>
+			</table>
+			<div>
+				<img alt="Map Image" />
+			</div>
+		</div>
+		<div th:replace="home :: footer-fragment"></div>
+	</div>
+</body>
+</html>
