@@ -14,9 +14,9 @@ import com.park.parkingapplication.model.Company;
 public interface CompanyService {
 	List<Company> findAll();
 
-	Company findById(String CIN);
+	Company findById(String id);
 
-	Boolean deleteById(String CIN);
+	Boolean deleteById(String id);
 
 	Boolean update(Company company);
 }

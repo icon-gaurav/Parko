@@ -1,0 +1,13 @@
+@charset "ISO-8859-1";
+
+footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+}
+
+#info {
+	color: green;
+	font-size: 2em;
+}

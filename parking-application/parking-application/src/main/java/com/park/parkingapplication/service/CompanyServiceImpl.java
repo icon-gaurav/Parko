@@ -37,9 +37,9 @@ public class CompanyServiceImpl implements CompanyService {
 	}
 
 	@Override
-	public Company findById(String CIN) {
+	public Company findById(String id) {
 		// TODO Auto-generated method stub
-		Optional<Company> optionalCompany = this.companyRepository.findById(CIN);
+		Optional<Company> optionalCompany = this.companyRepository.findById(id);
 		if (!optionalCompany.isPresent())
 			throw new RuntimeException("Not found");
 		return optionalCompany.get();

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Parking Application Login/SignUp</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}" />
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+	th:src="@{/webjars/jquery/1.11.1/jquery.min.js}"></script>
+<script type="text/javascript"
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+	th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+<script type="text/javascript"
+	th:src="@{/webjars/popper.js/1.14.3/umd/popper.min.js}"></script>
+<script type="text/javascript"
+	th:src="@{/webjars/popper.js/1.14.3/esm/popper.min.js}"></script>
+<script type="text/javascript" th:src="@{/javascript/signup.js}"></script>
+<link rel="stylesheet" type="text/css" href="../static/css/signup.css"
+	th:href="@{/css/signup.css}" />
+<link rel="stylesheet" th:href="@{/css/navigation.css}" />
+</head>
+<body>
+
+	<div class="signup bg-img">
+		<form class="container" th:object="${customer}"
+			th:action="@{/newCustomer}" method="POST"
+			onsubmit="return formValidation()">
+			<h1>Sign Up</h1>
+			<div class="form-group">
+				<label for="vehicle-no">Vehicle No. :</label> <input type="text"
+					class="form-control" id="vehicle-no" th:field="*{vehicleNum}">
+			</div>
+			<div class="form-group">
+				<label for="contact">Contact No. :</label> <input type="number"
+					class="form-control" id="contact" th:field="*{contact}">
+			</div>
+			<div class="form-group">
+				<label for="email">Email address:</label> <input type="email"
+					class="form-control" id="email" placeholder="Optional"
+					th:field="*{email}">
+			</div>
+			<div class="form-group">
+				<label for="username">User name:</label> <input type="text"
+					class="form-control" id="username" th:field="*{username}">
+			</div>
+			<div class="form-group">
+				<label for="pass">Password:</label> <input type="password"
+					class="form-control" id="pass">
+			</div>
+			<div class="form-group">
+				<label for="cnfpass">Confirm Password:</label> <input
+					type="password" class="form-control" id="cnfpass">
+			</div>
+			<div class="checkbox">
+				<label><input type="checkbox" id="T&C"
+					onchange="checkBoxClick()"><a href="#">Terms and
+						Condition</a></label>
+			</div>
+			<button type="submit" class="btn btn-success" id="register" disabled>Register</button>
+			<p>
+				If already registered <a th:href="@{/login}">LogIn</a> here.
+			</p>
+		</form>
+
+		<!-- Error message container -->
+		<div class="invalid" id="msg_div">
+			<p class="invalid" id="msg_header">Pay Attention</p>
+			<p class="invalid" id="vehicle_msg">Vehicle no. required</p>
+			<p class="invalid" id="email_msg">Enter valid email address</p>
+			<p class="invalid" id="user_msg">User name is not valid</p>
+			<p class="invalid" id="password_msg">Password didn't match</p>
+		</div>
+
+	</div>
+
+</body>
+</html>

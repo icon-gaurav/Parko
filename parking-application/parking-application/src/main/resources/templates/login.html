@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Parking Application Login/SignUp</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}" />
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+	th:src="@{/webjars/jquery/1.11.1/jquery.min.js}"></script>
+<script type="text/javascript"
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+	th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+<script type="text/javascript"
+	th:src="@{/webjars/popper.js/1.14.3/umd/popper.min.js}"></script>
+<script type="text/javascript"
+	th:src="@{/webjars/popper.js/1.14.3/esm/popper.min.js}"></script>
+<script type="text/javascript" th:src="@{/javascript/login.js}"></script>
+<link rel="stylesheet" type="text/css" href="../static/css/login.css"
+	th:href="@{/css/login.css}" />
+
+</head>
+<body>
+	<div class="signup bg-img">
+		<form class="container" th:object="${user}" th:action="@{/user_login}"
+			method="POST">
+			<h1>Log In</h1>
+			<div class="form-group">
+				<label for="username">User name:</label> <input type="text"
+					class="form-control" id="username" th:field="*{username}">
+			</div>
+			<div class="form-group">
+				<label for="pass">Password:</label> <input type="password"
+					class="form-control" id="pass">
+			</div>
+			<div class="checkbox">
+				<label><input type="checkbox"><a href="#">Remember me</a></label>
+			</div>
+			<button type="submit" class="btn btn-success">Submit</button>
+			<p>
+				If not registered <a th:href="@{/signup}">Register</a> here.
+			</p>
+		</form>
+
+	</div>
+
+</body>
+</html>

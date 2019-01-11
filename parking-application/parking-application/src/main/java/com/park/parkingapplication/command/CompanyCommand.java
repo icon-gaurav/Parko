@@ -3,6 +3,8 @@
  */
 package com.park.parkingapplication.command;
 
+import java.sql.Time;
+
 import com.park.parkingapplication.model.Category;
 import com.park.parkingapplication.model.Status;
 
@@ -17,7 +19,24 @@ public class CompanyCommand {
 	private Category category;
 	private Status status;
 	private byte[] description;
-	private Double rate;
+	private Time openTime;
+	private Time closeTime;
+
+	public Time getOpenTime() {
+		return openTime;
+	}
+
+	public void setOpenTime(Time openTime) {
+		this.openTime = openTime;
+	}
+
+	public Time getCloseTime() {
+		return closeTime;
+	}
+
+	public void setCloseTime(Time closeTime) {
+		this.closeTime = closeTime;
+	}
 
 	public CompanyCommand() {
 		super();
@@ -69,14 +88,6 @@ public class CompanyCommand {
 
 	public void setDescription(byte[] description) {
 		this.description = description;
-	}
-
-	public Double getRate() {
-		return rate;
-	}
-
-	public void setRate(Double rate) {
-		this.rate = rate;
 	}
 
 }

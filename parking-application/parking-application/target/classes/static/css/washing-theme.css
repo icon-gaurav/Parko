@@ -1,0 +1,26 @@
+@charset "ISO-8859-1";
+
+.washing-specification {
+	padding-top: 8em;
+}
+
+.grid-container {
+	display: grid;
+}
+
+.white-text {
+	color: white;
+}
+
+.counter-element {
+	background-color: black;
+}
+
+.equal-height-row {
+	display: flex;
+	margin-bottom: 5px;
+}
+
+.equal-height-col {
+	flex: 1;
+}
