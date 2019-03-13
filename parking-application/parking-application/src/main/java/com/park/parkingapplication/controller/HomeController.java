@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.park.parkingapplication.command.CompanyCommand;
 import com.park.parkingapplication.command.CustomerCommand;
 import com.park.parkingapplication.model.Customer;
 import com.park.parkingapplication.model.Maintenance;
@@ -118,5 +119,12 @@ public class HomeController {
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String logIn() {
 		return null;
+	}
+	
+	@RequestMapping(value = "/new/company")
+	public String newCompany(Model model) {
+		CompanyCommand companyCommand = new CompanyCommand();
+		model.addAttribute("newCompany", companyCommand);
+		return "company-form";
 	}
 }

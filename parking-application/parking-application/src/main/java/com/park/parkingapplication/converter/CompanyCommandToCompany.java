@@ -4,9 +4,11 @@
 package com.park.parkingapplication.converter;
 
 import org.springframework.core.convert.converter.Converter;
+import org.springframework.stereotype.Component;
 
 import com.park.parkingapplication.command.AddressCommand;
 import com.park.parkingapplication.command.CompanyCommand;
+import com.park.parkingapplication.converter.AddressCommandToAddress;
 import com.park.parkingapplication.model.Address;
 import com.park.parkingapplication.model.Company;
 
@@ -14,6 +16,7 @@ import com.park.parkingapplication.model.Company;
  * @author Gaurav Kumar
  *
  */
+@Component
 public class CompanyCommandToCompany implements Converter<CompanyCommand, Company> {
 
 	@Override

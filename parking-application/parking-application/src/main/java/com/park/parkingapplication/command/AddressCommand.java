@@ -12,7 +12,7 @@ public class AddressCommand {
 	private String street;
 	private String city;
 	private String nearBy;
-	private String State;
+	private String state;
 	private Integer pin;
 
 	public AddressCommand() {
@@ -52,11 +52,11 @@ public class AddressCommand {
 	}
 
 	public String getState() {
-		return State;
+		return state;
 	}
 
 	public void setState(String state) {
-		State = state;
+		this.state = state;
 	}
 
 	public Integer getPin() {
@@ -66,4 +66,10 @@ public class AddressCommand {
 	public void setPin(Integer pin) {
 		this.pin = pin;
 	}
+
+	@Override
+	public String toString() {
+		return street + ", " + nearBy + "\n" + city + " " + pin + "\n" + state;
+	}
+
 }

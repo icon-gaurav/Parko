@@ -4,7 +4,10 @@
 package com.park.parkingapplication.model;
 
 import java.sql.Time;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.Enumerated;
 import javax.persistence.Id;
@@ -20,10 +23,11 @@ public class Company {
 	@Id
 	private String id;
 	private String name;
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	private Address address;
+	@ElementCollection
 	@Enumerated
-	private Category category;
+	private Set<Category> category;
 	@Enumerated
 	private Status status;
 	private byte[] description;
@@ -58,11 +62,11 @@ public class Company {
 		this.address = address;
 	}
 
-	public Category getCategory() {
+	public Set<Category> getCategory() {
 		return category;
 	}
 
-	public void setCategory(Category category) {
+	public void setCategory(Set<Category> category) {
 		this.category = category;
 	}
 

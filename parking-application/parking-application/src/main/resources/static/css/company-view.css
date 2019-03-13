@@ -1,0 +1,7 @@
+@charset "ISO-8859-1";
+
+.group label, .group p{
+	display:inline;
+	width: auto;
+	text-align: left;
+}

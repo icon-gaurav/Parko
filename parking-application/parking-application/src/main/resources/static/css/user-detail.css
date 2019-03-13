@@ -1,0 +1,35 @@
+@charset "ISO-8859-1";
+
+.vl {
+	border-left: 3px solid grey;
+	height: 100px;
+	position: absolute;
+	left: 30%;
+	margin-left: -3px;
+	top: 0;
+}
+
+.user-image {
+	box-sizing: border-box;
+	width: 30%;
+	justify-content: centre;
+	align-items: center;
+}
+
+.detail {
+	
+}
+
+.row div {
+	float: left;
+}
+
+.group{
+	width: 70%;
+}
+
+.group label, .group p{
+	display:inline;
+	width: auto;
+	text-align: left;
+}

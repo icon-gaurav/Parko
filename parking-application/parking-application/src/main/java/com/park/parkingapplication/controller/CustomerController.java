@@ -48,8 +48,10 @@ public class CustomerController {
 	}
 
 	@RequestMapping(value = "/customer/{userName}/show", method = RequestMethod.GET)
-	public String showByUserName(@PathVariable String userName) {
-		return "show";
+	public String showByUserName(@PathVariable String userName, Model model) {
+		CustomerCommand user = customerService.findCommandByUserName(userName);
+		model.addAttribute("user", user);
+		return "user-details";
 	}
 
 }

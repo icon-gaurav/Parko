@@ -4,8 +4,9 @@
 package com.park.parkingapplication.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
 
 /**
  * @author Gaurav Kumar
@@ -15,25 +16,25 @@ import javax.persistence.Id;
 @Entity
 public class Address {
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Integer id;
 	private String latitude;
 	private String street;
 	private String city;
 	private String nearBy;
-	private String State;
+	private String state;
 	private Integer pin;
-
-	public Address(String latitude, String street, String city, String nearBy, String state, Integer pIN) {
-		super();
-		this.latitude = latitude;
-		this.street = street;
-		this.city = city;
-		this.nearBy = nearBy;
-		State = state;
-		pin = pIN;
-	}
 
 	public Address() {
 		super();
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getLatitude() {
@@ -69,11 +70,11 @@ public class Address {
 	}
 
 	public String getState() {
-		return State;
+		return state;
 	}
 
 	public void setState(String state) {
-		State = state;
+		this.state = state;
 	}
 
 	public Integer getPin() {
@@ -81,7 +82,11 @@ public class Address {
 	}
 
 	public void setPin(Integer pIN) {
-		pin = pIN;
+		this.pin = pIN;
 	}
 
+	@Override
+	public String toString() {
+		return street + ", " + nearBy + "\n" + city + " " + pin + "\n" + state;
+	}
 }

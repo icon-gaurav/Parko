@@ -5,6 +5,7 @@ package com.park.parkingapplication.service;
 
 import java.util.List;
 
+import com.park.parkingapplication.command.CompanyCommand;
 import com.park.parkingapplication.model.Company;
 
 /**
@@ -19,4 +20,6 @@ public interface CompanyService {
 	Boolean deleteById(String id);
 
 	Boolean update(Company company);
+
+	CompanyCommand saveCompanyCommand(CompanyCommand companyCommand);
 }
